@@ -1,3 +1,5 @@
+@use "../variables/colors";
+@use "../variables/fonts";
 @use "../components/header";
 
 body {
@@ -13,5 +15,65 @@ body {
 
   @media (min-width: 35rem) and (max-width: 64rem) {
     background-image: url("../../assets/home/background-home-tablet.jpg");
+  }
+}
+
+main {
+  padding-block: 2rem;
+  padding-inline: 1.5rem;
+}
+
+.wrapper {
+  display: grid;
+  gap: 5rem;
+}
+
+.content {
+  text-align: center;
+  p {
+    color: colors.$purple;
+    font-family: fonts.$secondary-paragraph;
+    text-transform: uppercase;
+    letter-spacing: fonts.$tracking-widest;
+    line-height: fonts.$leading-5;
+  }
+
+  h1 {
+    color: colors.$white;
+    font-family: fonts.$title;
+    text-transform: uppercase;
+    letter-spacing: fonts.$tracking-wide;
+    line-height: fonts.$leading-loose;
+    font-size: 5rem;
+  }
+
+  h1 ~ p {
+    font-family: fonts.$paragraph;
+    text-transform: none;
+    letter-spacing: fonts.$tracking-normal;
+    line-height: fonts.$leading-relaxed;
+    letter-spacing: fonts.$tracking-wide;
+  }
+}
+
+.explore-button {
+  align-items: center;
+  aspect-ratio: 1;
+  background-color: colors.$white;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  width: 150px;
+
+  span {
+    color: colors.$black;
+    font-size: 1.25rem;
+    font-family: fonts.$title;
+    text-transform: uppercase;
+    line-height: fonts.$leading-6;
+    letter-spacing: fonts.$tracking-wide;
   }
 }
