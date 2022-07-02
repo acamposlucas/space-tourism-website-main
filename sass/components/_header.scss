@@ -1,0 +1,139 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  @media (min-width: 64rem) {
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      height: 1px;
+      width: 100%;
+      margin-right: -2.5rem;
+      background: colors.$white-header-line;
+      order: 1;
+      z-index: 1;
+    }
+  }
+}
+
+.logo {
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+
+  @media (min-width: 48rem) {
+    max-height: 3rem;
+    max-width: 3rem;
+  }
+}
+
+.mobile-nav-toggle {
+  display: none;
+
+  @media (max-width: 35rem) {
+    position: absolute;
+    background-image: url("../../assets/shared/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    border: 0;
+    width: 2rem;
+    background-color: transparent;
+    aspect-ratio: 1;
+    top: 2.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: block;
+
+    &[aria-expanded="true"] {
+      background-image: url("../../assets/shared/icon-close.svg");
+    }
+
+    &:focus-visible {
+      outline: 5px solid colors.$white;
+      outline-offset: 5px;
+    }
+  }
+}
+
+nav {
+  order: 2;
+}
+
+.main-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  list-style: none;
+  padding: 0;
+  margin-block: 2rem;
+  background-color: colors.$black-nav;
+  z-index: 1000;
+  transform: translate(100%);
+
+  @media (max-width: 35rem) {
+    gap: 2rem;
+    position: fixed;
+    inset: 0 0 0 30%;
+    padding: min(30vh, 10rem) 2rem;
+    margin: 0;
+    transition: transform 350ms ease-out;
+  }
+
+  &[data-visible="true"] {
+    transform: translate(0);
+  }
+
+  @supports (backdrop-filter: blur(1rem)) {
+    background-color: colors.$white-nav;
+    backdrop-filter: blur(1rem);
+  }
+
+  @media (min-width: 35rem) {
+    flex-direction: row;
+    gap: clamp(1.5rem, 5vw, 3rem);
+    padding-inline: clamp(3rem, 10vw, 10rem);
+    transform: translate(0);
+
+    & > * {
+      cursor: pointer;
+      padding-block: 2rem;
+      border-bottom: 0.2rem solid transparent;
+    }
+
+    & > .active {
+      border-color: colors.$white;
+    }
+
+    & > *:hover,
+    & > *:focus {
+      border-color: colors.$white-nav;
+    }
+  }
+
+  li {
+    a {
+      color: colors.$white;
+      font-family: fonts.$secondary-paragraph;
+      text-transform: uppercase;
+      letter-spacing: 2.36px;
+      line-height: 1.1;
+      display: flex;
+      text-decoration: none;
+
+      span {
+        font-weight: 700;
+        margin-inline-end: 0.5rem;
+        letter-spacing: 2.7px;
+
+        @media (min-width: 35rem) and (max-width: 64rem) {
+          display: none;
+        }
+      }
+    }
+  }
+}

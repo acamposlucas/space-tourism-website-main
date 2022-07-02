@@ -1,6 +1,14 @@
-import './style.css'
+const navToggle = document.querySelector(".mobile-nav-toggle");
+const nav = document.querySelector(".main-navigation");
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+navToggle.addEventListener("click", () => {
+  let visibility = nav.getAttribute("data-visible");
+
+  if (visibility === "false") {
+    nav.setAttribute("data-visible", true);
+    navToggle.setAttribute("aria-expanded", true);
+  } else if (visibility === "true") {
+    nav.setAttribute("data-visible", false);
+    navToggle.setAttribute("aria-expanded", false);
+  }
+});

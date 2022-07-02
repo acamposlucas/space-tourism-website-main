@@ -1,0 +1,17 @@
+@use "../components/header";
+
+body {
+  background-image: url("../../assets/home/background-home-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    background-image: url("../../assets/home/background-home-mobile.jpg");
+  }
+
+  @media (min-width: 35rem) and (max-width: 64rem) {
+    background-image: url("../../assets/home/background-home-tablet.jpg");
+  }
+}
