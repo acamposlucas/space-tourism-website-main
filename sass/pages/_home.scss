@@ -20,22 +20,38 @@ body {
 
 main {
   padding-block: 2rem;
-  padding-inline: 1.5rem;
+  padding-inline: clamp(1.5rem, 7vw, 25rem);
 }
 
 .wrapper {
   display: grid;
-  gap: 5rem;
+  gap: clamp(5rem, 5vw, 10rem);
+
+  @media (min-width: 64rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 60vh;
+    align-items: end;
+  }
 }
 
 .content {
   text-align: center;
+
+  @media (min-width: 64rem) {
+    text-align: left;
+  }
+
   p {
     color: colors.$purple;
     font-family: fonts.$secondary-paragraph;
     text-transform: uppercase;
     letter-spacing: fonts.$tracking-widest;
     line-height: fonts.$leading-5;
+
+    @media (min-width: 64rem) {
+      font-size: 1.75rem;
+      line-height: fonts.$leading-8;
+    }
   }
 
   h1 {
@@ -45,6 +61,11 @@ main {
     letter-spacing: fonts.$tracking-wide;
     line-height: fonts.$leading-loose;
     font-size: 5rem;
+
+    @media (min-width: 64rem) {
+      font-size: 9.375rem;
+      line-height: fonts.$leading-normal;
+    }
   }
 
   h1 ~ p {
@@ -53,6 +74,10 @@ main {
     letter-spacing: fonts.$tracking-normal;
     line-height: fonts.$leading-relaxed;
     letter-spacing: fonts.$tracking-wide;
+
+    @media (min-width: 64rem) {
+      font-size: 1.125rem;
+    }
   }
 }
 
@@ -67,6 +92,21 @@ main {
   justify-content: center;
   margin-inline: auto;
   width: 150px;
+  transition: box-shadow 0.5s ease-out;
+
+  @media (min-width: 35rem) {
+    width: 242px;
+  }
+
+  @media (min-width: 64rem) {
+    width: 274px;
+    margin: 0;
+    justify-self: end;
+  }
+
+  &:hover {
+    box-shadow: 1px 1px 1px 80px colors.$black-500;
+  }
 
   span {
     color: colors.$black;
@@ -75,5 +115,12 @@ main {
     text-transform: uppercase;
     line-height: fonts.$leading-6;
     letter-spacing: fonts.$tracking-wide;
+    a {
+      text-decoration: none;
+
+      &:visited {
+        color: inherit;
+      }
+    }
   }
 }
