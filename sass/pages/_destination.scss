@@ -101,10 +101,16 @@ main {
 
       li {
         color: colors.$white;
+        cursor: pointer;
         text-transform: uppercase;
         letter-spacing: fonts.$tracking-wider;
         font-size: 0.875rem;
         padding-block: 0.5rem;
+        border-bottom: 3px solid transparent;
+
+        &:hover {
+          border-color: colors.$white-header-line;
+        }
 
         @media (min-width: 64rem) {
           font-size: 1rem;

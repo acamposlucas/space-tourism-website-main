@@ -60,7 +60,11 @@
           <strong><span>01 </span> Pick your destination</strong>
         </header>
         <div class="content">
-          <img src="./assets/destination/image-moon.png" alt="Moon" />
+          <img
+            id="image"
+            src="./assets/destination/image-moon.png"
+            alt="Moon"
+          />
           <ul>
             <li class="selector active">Moon</li>
             <li class="selector">Mars</li>
@@ -68,8 +72,8 @@
             <li class="selector">Titan</li>
           </ul>
           <article>
-            <h1>Moon</h1>
-            <p>
+            <h1 id="name">Moon</h1>
+            <p id="description">
               See our planet as you’ve never seen it before. A perfect relaxing
               trip away to help regain perspective and come back refreshed.
               While you’re there, take in some history by visiting the Luna 2
@@ -79,11 +83,11 @@
               <div class="details-wrapper">
                 <div class="detail">
                   <strong>Avg. Distance</strong>
-                  <span>384,400 KM</span>
+                  <span id="distance">384,400 KM</span>
                 </div>
                 <div class="detail">
                   <strong>Est. Travel Time</strong>
-                  <span>3 Days</span>
+                  <span id="travel">3 Days</span>
                 </div>
               </div>
             </div>
@@ -93,5 +97,6 @@
     </main>
 
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/js/destination.js"></script>
   </body>
 </html>
