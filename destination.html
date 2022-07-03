@@ -56,22 +56,41 @@
     </header>
     <main>
       <div class="wrapper">
-        <header>
-          <strong><span>01 </span> Pick your destination</strong>
+        <header class="secondary-header">
+          <strong
+            ><span aria-hidden="true">01 </span> Pick your destination</strong
+          >
         </header>
         <div class="content">
-          <img
-            id="image"
-            src="./assets/destination/image-moon.png"
-            alt="Moon"
-          />
+          <img id="image" src="./assets/destination/image-moon.png" alt="" />
           <ul>
-            <li class="selector active">Moon</li>
-            <li class="selector">Mars</li>
-            <li class="selector">Europa</li>
-            <li class="selector">Titan</li>
+            <li class="selector active">
+              <button type="button" role="tab" id="tab-0" aria-selected="true">
+                Moon
+              </button>
+            </li>
+            <li class="selector">
+              <button type="button" role="tab" id="tab-1" aria-selected="false">
+                Mars
+              </button>
+            </li>
+            <li class="selector">
+              <button type="button" role="tab" id="tab-2" aria-selected="false">
+                Europa
+              </button>
+            </li>
+            <li class="selector">
+              <button type="button" role="tab" id="tab-3" aria-selected="false">
+                Titan
+              </button>
+            </li>
           </ul>
-          <article>
+          <article
+            id="tabpanel"
+            role="tabpanel"
+            aria-labelledby="tab"
+            tabindex="0"
+          >
             <h1 id="name">Moon</h1>
             <p id="description">
               See our planet as you’ve never seen it before. A perfect relaxing

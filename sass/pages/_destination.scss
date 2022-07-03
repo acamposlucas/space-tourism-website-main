@@ -19,12 +19,13 @@ body {
 }
 
 main {
-  padding-block: 2rem;
-  padding-inline: clamp(1.5rem, 7vw, 25rem);
+  margin-block: 2rem;
+  padding-inline: clamp(1.5rem, 15vw, 25rem);
 }
 
 .wrapper {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
 
   @media (min-width: 64rem) {
@@ -32,11 +33,14 @@ main {
     gap: 4rem;
   }
 
-  header {
+  .secondary-header {
     text-align: center;
+    width: max-content;
+    margin-inline: auto;
 
     @media (min-width: 35rem) {
       text-align: left;
+      margin: 0;
     }
 
     @media (min-width: 64rem) {
@@ -62,10 +66,11 @@ main {
   .content {
     display: grid;
     gap: clamp(1.25rem, 7rem, 5vw);
-    padding-inline: clamp(2rem, 3vw, 7rem);
+    // padding-inline: clamp(1.5rem, 3rem, 7rem);
 
     @media (min-width: 64rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 5rem;
     }
 
     img {
@@ -81,7 +86,7 @@ main {
       @media (min-width: 64rem) {
         min-width: 445px;
         grid-column: 1;
-        grid-row: 2 / 4;
+        grid-row: 2 / 3;
       }
     }
 
@@ -102,11 +107,19 @@ main {
       li {
         color: colors.$white;
         cursor: pointer;
-        text-transform: uppercase;
-        letter-spacing: fonts.$tracking-wider;
-        font-size: 0.875rem;
+
         padding-block: 0.5rem;
         border-bottom: 3px solid transparent;
+
+        button {
+          background-color: transparent;
+          border: 0;
+          color: inherit;
+          cursor: pointer;
+          text-transform: uppercase;
+          letter-spacing: fonts.$tracking-wider;
+          font-size: 0.875rem;
+        }
 
         &:hover {
           border-color: colors.$white-header-line;
@@ -167,14 +180,14 @@ main {
         .details-wrapper {
           display: flex;
           flex-direction: column;
-          gap: clamp(2rem, 7rem, 10vw);
+          gap: clamp(2rem, 2rem, 10vw);
+          justify-content: center;
 
           @media (min-width: 35rem) {
             flex-direction: row;
-            justify-content: center;
           }
 
-          @media (min-width: 35rem) {
+          @media (min-width: 64rem) {
             justify-content: flex-start;
           }
 
