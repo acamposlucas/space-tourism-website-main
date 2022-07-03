@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sass/style.scss" />
+    <link rel="stylesheet" href="./sass/pages/_crew.scss" />
+    <title>Space Tourism | Crew</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div>
+        <img class="logo" src="/assets/shared/logo.svg" alt="" />
+      </div>
+
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="main-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <nav>
+        <ul class="main-navigation" id="main-navigation" data-visible="false">
+          <li>
+            <a href="#" class="nav-text">
+              <span aria-hidden="true">00 </span>Home
+            </a>
+          </li>
+          <li>
+            <a href="destination.html" class="nav-text">
+              <span aria-hidden="true">01 </span>Destination
+            </a>
+          </li>
+          <li class="active">
+            <a href="crew.html" class="nav-text">
+              <span aria-hidden="true">02 </span>Crew
+            </a>
+          </li>
+          <li>
+            <a href="/" class="nav-text">
+              <span aria-hidden="true">03 </span>Technology
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="wrapper">
+        <header class="secondary-header">
+          <strong><span aria-hidden="true">02 </span> Meet your crew</strong>
+        </header>
+        <div class="content">
+          <div class="img-wrapper">
+            <img src="./assets/crew/image-douglas-hurley.png" alt="" />
+          </div>
+          <ul>
+            <li>
+              <button
+                aria-label="Douglas Hurley"
+                type="button"
+                role="tab"
+                id="tab-0"
+                aria-selected="true"
+                class="active"
+              ></button>
+            </li>
+            <li>
+              <button
+                aria-label="Mark Shuttleworth"
+                type="button"
+                role="tab"
+                id="tab-1"
+                aria-selected="false"
+              ></button>
+            </li>
+            <li>
+              <button
+                aria-label="Victor Glover"
+                type="button"
+                role="tab"
+                id="tab-2"
+                aria-selected="false"
+              ></button>
+            </li>
+            <li>
+              <button
+                aria-label="Anousheh Ansari"
+                type="button"
+                role="tab"
+                id="tab-3"
+                aria-selected="false"
+              ></button>
+            </li>
+          </ul>
+          <article
+            id="tabpanel"
+            role="tabpanel"
+            aria-labelledby="tab"
+            tabindex="0"
+          >
+            <h2>Commander</h2>
+            <h1>Douglas Hurler</h1>
+            <p>
+              Douglas Gerald Hurley is an American engineer, former Marine Corps
+              pilot and former NASA astronaut. He launched into space for the
+              third time as commander of Crew Dragon Demo-2.
+            </p>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
