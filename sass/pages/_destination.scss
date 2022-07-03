@@ -1,0 +1,134 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+@use "../sass-utils/helpers";
+
+body {
+  background-image: url("../../assets/destination/background-destination-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    background-image: url("../../assets/destination/background-destination-mobile.jpg");
+  }
+
+  @media (min-width: 35rem) and (max-width: 64rem) {
+    background-image: url("../../assets/destination/background-destination-tablet.jpg");
+  }
+}
+
+main {
+  padding-block: 2rem;
+  padding-inline: clamp(1.5rem, 7vw, 25rem);
+}
+
+.wrapper {
+  display: grid;
+  gap: 2rem;
+
+  header {
+    text-align: center;
+    strong {
+      color: colors.$white;
+      text-transform: uppercase;
+      letter-spacing: fonts.$tracking-widest;
+
+      span {
+        color: colors.$white-header-line;
+        font-family: fonts.$secondary-paragraph;
+        font-weight: 700;
+        line-height: fonts.$leading-5;
+        margin-right: 1.125rem;
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    gap: 1.5rem;
+
+    img {
+      aspect-ratio: 1;
+      display: block;
+      margin-inline: auto;
+      width: 170px;
+    }
+
+    ul {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      list-style: none;
+      max-width: fit-content;
+      margin-inline: auto;
+
+      li {
+        color: colors.$white;
+        text-transform: uppercase;
+        letter-spacing: fonts.$tracking-wider;
+        font-size: 0.875rem;
+        padding-block: 0.5rem;
+
+        &.active {
+          border-bottom: 3px solid colors.$white;
+        }
+      }
+    }
+
+    article {
+      text-align: center;
+      h1 {
+        color: colors.$white;
+        font-family: fonts.$title;
+        font-size: 3.5rem;
+        line-height: fonts.$leading-relaxed;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: colors.$purple;
+        line-height: fonts.$leading-relaxed;
+      }
+
+      .content-details {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        @media (max-width: 64rem) {
+          &:before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: colors.$white-header-line;
+            margin-top: 2rem;
+          }
+        }
+
+        .detail {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.75rem;
+
+          strong {
+            font-family: fonts.$secondary-paragraph;
+            font-size: 0.875rem;
+            color: colors.$purple;
+            text-transform: uppercase;
+            letter-spacing: fonts.$tracking-widest;
+          }
+
+          span {
+            text-transform: uppercase;
+            color: colors.$white;
+            font-family: fonts.$title;
+            font-size: 1.75rem;
+          }
+        }
+      }
+    }
+  }
+}
