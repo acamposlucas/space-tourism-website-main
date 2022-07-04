@@ -33,8 +33,55 @@ main {
   }
 
   @media (min-width: 64rem) {
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4rem;
+  }
+
+  .secondary-header {
+    @media (min-width: 64rem) {
+      grid-column: 1;
+    }
+  }
+
+  .img-wrapper {
+    position: relative;
+    height: 33vh;
+
+    @media (min-width: 35rem) {
+      grid-row: 3;
+      height: calc(56vh - 3px);
+    }
+
+    @media (min-width: 64rem) {
+      grid-row: span 3;
+      height: 84vh;
+    }
+
+    img {
+      display: block;
+      margin-inline: auto;
+      height: 100%;
+      width: 180px;
+
+      @media (min-width: 35rem) {
+        width: 456px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      &:after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: colors.$white-header-line;
+      }
+    }
+
+    @media (min-width: 64rem) {
+      grid-column: 2;
+    }
   }
 
   .content {
@@ -45,36 +92,9 @@ main {
       grid-template-rows: repeat(3, auto);
     }
 
-    .img-wrapper {
-      position: relative;
-      height: 33vh;
-
-      @media (min-width: 35rem) {
-        grid-row: 3;
-        height: calc(56vh - 3px);
-      }
-
-      img {
-        display: block;
-        margin-inline: auto;
-        height: 100%;
-        width: 180px;
-
-        @media (min-width: 35rem) {
-          width: 456px;
-        }
-      }
-
-      @media (max-width: 767px) {
-        &:after {
-          content: "";
-          display: inline-block;
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          background-color: colors.$white-header-line;
-        }
-      }
+    @media (min-width: 64rem) {
+      grid-column: 1;
+      grid-template-rows: repeat(2, max-content);
     }
 
     ul {
@@ -88,6 +108,12 @@ main {
         grid-row: 2;
       }
 
+      @media (min-width: 64rem) {
+        align-self: end;
+        margin: 0;
+        gap: 1.5rem;
+      }
+
       li {
         button {
           aspect-ratio: 1;
@@ -96,6 +122,10 @@ main {
           border-radius: 50%;
           cursor: pointer;
           width: 10px;
+
+          @media (min-width: 64rem) {
+            width: 15px;
+          }
 
           &.active {
             background-color: colors.$white;
@@ -117,6 +147,10 @@ main {
 
     article {
       text-align: center;
+
+      @media (min-width: 64rem) {
+        text-align: left;
+      }
       h1,
       h2 {
         font-family: fonts.$title;
@@ -132,6 +166,10 @@ main {
           font-size: 1.25rem;
           line-height: fonts.$leading-relaxed;
         }
+        @media (min-width: 64rem) {
+          font-size: 2rem;
+          line-height: fonts.$leading-relaxed;
+        }
       }
 
       h1 {
@@ -144,11 +182,19 @@ main {
           font-size: 2.5rem;
           line-height: fonts.$leading-relaxed;
         }
+        @media (min-width: 64rem) {
+          font-size: 3.5rem;
+          line-height: fonts.$leading-relaxed;
+        }
       }
 
       p {
         color: colors.$purple;
         line-height: fonts.$leading-normal;
+
+        @media (min-width: 64rem) {
+          font-size: 1.125rem;
+        }
       }
     }
   }
