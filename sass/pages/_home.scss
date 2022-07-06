@@ -87,12 +87,18 @@ main {
   background-color: colors.$white;
   border: 0;
   border-radius: 50%;
-  cursor: pointer;
+  color: colors.$black;
   display: flex;
   justify-content: center;
   margin-inline: auto;
-  width: 150px;
   transition: box-shadow 0.5s ease-out;
+  width: 150px;
+  font-size: 1.25rem;
+  font-family: fonts.$title;
+  text-transform: uppercase;
+  line-height: fonts.$leading-6;
+  letter-spacing: fonts.$tracking-wide;
+  text-decoration: none;
 
   @media (min-width: 35rem) {
     width: 242px;
@@ -108,20 +114,7 @@ main {
     box-shadow: 1px 1px 1px 80px colors.$black-500;
   }
 
-  span {
-    color: colors.$black;
-    font-size: 1.25rem;
-    font-family: fonts.$title;
-    text-transform: uppercase;
-    line-height: fonts.$leading-6;
-    letter-spacing: fonts.$tracking-wide;
-    a {
-      text-decoration: none;
-      color: inherit;
-
-      &:visited {
-        color: inherit;
-      }
-    }
+  &:visited {
+    color: inherit;
   }
 }
