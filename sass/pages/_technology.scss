@@ -34,6 +34,25 @@ main {
     grid-template-rows: repeat(2, auto);
     gap: 4rem;
     padding-inline-start: 10rem;
+    align-items: center;
+  }
+
+  .img-wrapper {
+    display: block;
+    background-image: url(../../assets/technology/image-launch-vehicle-landscape.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 40vh;
+    width: 100vw;
+
+    @media (min-width: 64rem) {
+      background-image: url(../../assets/technology/image-launch-vehicle-portrait.jpg);
+      background-size: cover;
+      background-position: center center;
+      height: 527px;
+      max-width: 515px;
+      order: 3;
+    }
   }
 
   .content {
@@ -44,21 +63,7 @@ main {
     @media (min-width: 64rem) {
       grid-template-columns: auto auto auto;
       gap: 4rem;
-      margin-top: 5rem;
       place-items: center;
-    }
-
-    .img-wrapper {
-      width: 100vw;
-      @media (min-width: 64rem) {
-        width: auto;
-        grid-column: 3;
-        position: absolute;
-        right: 0;
-      }
-      img {
-        width: 100%;
-      }
     }
 
     ul {
@@ -85,9 +90,13 @@ main {
           font-family: fonts.$title;
           width: 40px;
 
+          @media (min-width: 35rem) {
+            width: 60px;
+            font-size: 1.5rem;
+          }
+
           @media (min-width: 64rem) {
             font-size: 2rem;
-            width: 80px;
           }
         }
       }
@@ -119,7 +128,7 @@ main {
         line-height: fonts.$leading-relaxed;
         font-family: fonts.$title;
         text-transform: uppercase;
-        letter-spacing: fonts.$tracking-wider;
+        letter-spacing: fonts.$tracking-wide;
 
         @media (min-width: 64rem) {
           font-size: 3.5rem;
