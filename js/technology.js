@@ -6,17 +6,16 @@ console.log(window.innerHeight);
 
 selectors.forEach((selector, index) => {
   selector.addEventListener("click", () => {
-    clearActiveClasses();
+    // clearActiveClasses();
     clearAriaSelectedAttr();
-    selector.classList.add("active");
     handleUpdateDestination(index);
     handleDestinationAttributes(index);
   });
 });
 
-function clearActiveClasses() {
-  selectors.forEach((selector) => selector.classList.remove("active"));
-}
+// function clearActiveClasses() {
+//   selectors.forEach((selector) => selector.classList.remove("active"));
+// }
 
 function clearAriaSelectedAttr() {
   selectors.forEach((selector) => {

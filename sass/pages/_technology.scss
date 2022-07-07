@@ -18,16 +18,11 @@ body {
   }
 }
 
-main {
-  margin-block: 2rem;
-  // padding-inline: clamp(1.5rem, 15vw, 25rem);
-}
-
 .wrapper {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
+  place-items: center;
 
   @media (min-width: 64rem) {
     display: flex;
@@ -41,8 +36,8 @@ main {
     display: block;
     background-image: url(../../assets/technology/image-launch-vehicle-landscape.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
-    min-height: 40vh;
+    background-size: cover;
+    min-height: 30vh;
     width: 100vw;
 
     @media (min-width: 64rem) {
@@ -69,6 +64,7 @@ main {
     ul {
       display: flex;
       justify-content: space-between;
+      list-style: none;
       gap: 1rem;
       width: max-content;
       margin-inline: auto;
@@ -83,12 +79,22 @@ main {
       li {
         button {
           aspect-ratio: 1;
-          background-color: colors.$white;
-          border: 0;
+          background-color: transparent;
+          border: 1px solid colors.$white-025;
           border-radius: 100%;
+          color: colors.$white;
           cursor: pointer;
-          font-family: typography.$title;
+          font-family: typography.$headings;
           width: 40px;
+
+          &[aria-selected="true"] {
+            background-color: colors.$white;
+            color: colors.$black;
+          }
+
+          &:hover {
+            border-color: colors.$white;
+          }
 
           @media (min-width: 35rem) {
             width: 60px;
@@ -116,7 +122,7 @@ main {
 
       strong {
         display: block;
-        font-family: typography.$secondary-paragraph;
+        font-family: typography.$secondary-body;
         color: colors.$purple;
         text-transform: uppercase;
         letter-spacing: typography.$tracking-wider;
@@ -126,7 +132,7 @@ main {
         color: colors.$white;
         font-size: 1.5rem;
         line-height: typography.$leading-relaxed;
-        font-family: typography.$title;
+        font-family: typography.$headings;
         text-transform: uppercase;
         letter-spacing: typography.$tracking-wide;
 

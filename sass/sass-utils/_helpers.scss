@@ -26,6 +26,10 @@
   }
 }
 
+.default-padding {
+  padding-inline: clamp(1.5rem, 10vw, 25rem);
+}
+
 .secondary-header {
   text-align: center;
   margin-bottom: 2rem;
