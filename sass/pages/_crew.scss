@@ -1,5 +1,5 @@
 @use "../variables/colors";
-@use "../variables/fonts";
+@use "../variables/typography";
 @use "../sass-utils/helpers";
 
 body {
@@ -76,7 +76,7 @@ main {
         position: absolute;
         width: 100%;
         height: 1px;
-        background-color: colors.$white-header-line;
+        background-color: colors.$white-010;
       }
     }
 
@@ -119,7 +119,7 @@ main {
       li {
         button {
           aspect-ratio: 1;
-          background-color: colors.$white-nav;
+          background-color: colors.$white-025;
           border: 0;
           border-radius: 50%;
           cursor: pointer;
@@ -134,7 +134,7 @@ main {
           }
 
           &:hover {
-            background-color: colors.$white-header-line;
+            background-color: colors.$white-025;
           }
 
           span {
@@ -155,44 +155,43 @@ main {
       }
       h1,
       h2 {
-        font-family: fonts.$title;
+        font-family: typography.$headings;
         text-transform: uppercase;
       }
 
       h2 {
-        color: colors.$white-50;
-        line-height: fonts.$leading-normal;
+        color: colors.$white-050;
+        line-height: typography.$leading-normal;
         margin-bottom: 0.5rem;
 
         @media (min-width: 35rem) {
           font-size: 1.25rem;
-          line-height: fonts.$leading-relaxed;
+          line-height: typography.$leading-relaxed;
         }
         @media (min-width: 64rem) {
           font-size: 2rem;
-          line-height: fonts.$leading-relaxed;
         }
       }
 
       h1 {
         color: colors.$white;
         font-size: 1.25rem;
-        line-height: fonts.$leading-7;
+        line-height: typography.$leading-normal;
         margin-bottom: 1rem;
 
         @media (min-width: 35rem) {
           font-size: 2.5rem;
-          line-height: fonts.$leading-relaxed;
+          line-height: typography.$leading-relaxed;
         }
         @media (min-width: 64rem) {
           font-size: 3.5rem;
-          line-height: fonts.$leading-relaxed;
+          line-height: typography.$leading-relaxed;
         }
       }
 
       p {
         color: colors.$purple;
-        line-height: fonts.$leading-normal;
+        line-height: typography.$leading-normal;
 
         @media (min-width: 64rem) {
           font-size: 1.125rem;

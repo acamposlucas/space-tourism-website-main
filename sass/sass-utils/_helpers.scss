@@ -1,5 +1,5 @@
 @use "../variables/colors";
-@use "../variables/fonts";
+@use "../variables/typography";
 
 .sr-only {
   position: absolute;
@@ -30,13 +30,13 @@
   strong {
     color: colors.$white;
     text-transform: uppercase;
-    letter-spacing: fonts.$tracking-widest;
+    letter-spacing: typography.$tracking-widest;
 
     span {
-      color: colors.$white-header-line;
-      font-family: fonts.$secondary-paragraph;
+      color: colors.$white-050;
+      font-family: typography.$secondary-body;
       font-weight: 700;
-      line-height: fonts.$leading-5;
+      line-height: typography.$leading-normal;
       margin-right: 1.125rem;
     }
   }

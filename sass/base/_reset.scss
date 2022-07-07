@@ -61,3 +61,16 @@ picture {
     scroll-behavior: auto !important;
   }
 }
+
+/* Custom resets  */
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+button {
+  cursor: pointer;
+}

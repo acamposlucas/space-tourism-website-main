@@ -1,5 +1,5 @@
 @use "../variables/colors";
-@use "../variables/fonts";
+@use "../variables/typography";
 @use "../sass-utils/helpers";
 
 body {
@@ -87,7 +87,7 @@ main {
           border: 0;
           border-radius: 100%;
           cursor: pointer;
-          font-family: fonts.$title;
+          font-family: typography.$title;
           width: 40px;
 
           @media (min-width: 35rem) {
@@ -116,19 +116,19 @@ main {
 
       strong {
         display: block;
-        font-family: fonts.$secondary-paragraph;
+        font-family: typography.$secondary-paragraph;
         color: colors.$purple;
         text-transform: uppercase;
-        letter-spacing: fonts.$tracking-wider;
+        letter-spacing: typography.$tracking-wider;
       }
 
       h1 {
         color: colors.$white;
         font-size: 1.5rem;
-        line-height: fonts.$leading-relaxed;
-        font-family: fonts.$title;
+        line-height: typography.$leading-relaxed;
+        font-family: typography.$title;
         text-transform: uppercase;
-        letter-spacing: fonts.$tracking-wide;
+        letter-spacing: typography.$tracking-wide;
 
         @media (min-width: 64rem) {
           font-size: 3.5rem;
@@ -137,7 +137,7 @@ main {
 
       p {
         color: colors.$purple;
-        line-height: fonts.$leading-relaxed;
+        line-height: typography.$leading-relaxed;
 
         @media (min-width: 64rem) {
           font-size: 1.125rem;

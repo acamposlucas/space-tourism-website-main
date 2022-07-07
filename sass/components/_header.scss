@@ -1,5 +1,5 @@
 @use "../variables/colors";
-@use "../variables/fonts";
+@use "../variables/typography";
 
 .main-header {
   display: flex;
@@ -15,7 +15,7 @@
       height: 1px;
       width: 100%;
       margin-right: -2.5rem;
-      background: colors.$white-header-line;
+      background: colors.$white-050;
       order: 1;
       z-index: 1;
     }
@@ -71,7 +71,7 @@ nav {
   list-style: none;
   padding: 0;
   margin-block: 2rem;
-  background-color: colors.$black-nav;
+  background-color: colors.$black-050;
   z-index: 1000;
   transform: translate(100%);
 
@@ -89,7 +89,7 @@ nav {
   }
 
   @supports (backdrop-filter: blur(1rem)) {
-    background-color: colors.$white-nav;
+    background-color: colors.$white-050;
     backdrop-filter: blur(1rem);
   }
 
@@ -101,7 +101,6 @@ nav {
 
     & > * {
       cursor: pointer;
-      // padding-block: 2rem;
       border-bottom: 0.2rem solid transparent;
     }
 
@@ -111,14 +110,14 @@ nav {
 
     & > *:hover,
     & > *:focus {
-      border-color: colors.$white-nav;
+      border-color: colors.$white-050;
     }
   }
 
   li {
     a {
       color: colors.$white;
-      font-family: fonts.$secondary-paragraph;
+      font-family: typography.$secondary-body;
       text-transform: uppercase;
       letter-spacing: 2.36px;
       line-height: 1.1;
