@@ -23,13 +23,13 @@ body {
   grid-template-columns: minmax(0, 1fr);
   gap: 2rem;
   place-items: center;
+  height: 70vh;
 
   @media (min-width: 64rem) {
-    display: flex;
     grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4rem;
-    padding-inline-start: 10rem;
-    align-items: center;
+    position: relative;
   }
 
   .img-wrapper {
@@ -42,11 +42,13 @@ body {
 
     @media (min-width: 64rem) {
       background-image: url(../../assets/technology/image-launch-vehicle-portrait.jpg);
-      background-size: cover;
+      background-size: contain;
       background-position: center center;
       height: 527px;
       max-width: 515px;
-      order: 3;
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 
@@ -59,6 +61,8 @@ body {
       grid-template-columns: auto auto auto;
       gap: 4rem;
       place-items: center;
+      justify-self: end;
+      padding-inline-start: 5rem;
     }
 
     ul {
@@ -118,6 +122,7 @@ body {
         grid-row: 1;
         padding-inline: 0;
         text-align: left;
+        width: fit-content;
       }
 
       strong {
@@ -144,6 +149,7 @@ body {
       p {
         color: colors.$purple;
         line-height: typography.$leading-relaxed;
+        font-family: typography.$body;
 
         @media (min-width: 64rem) {
           font-size: 1.125rem;

@@ -36,6 +36,7 @@ body {
 .img-wrapper {
   height: 33vh;
   position: relative;
+
   @media (min-width: 35rem) {
     height: calc(45vh + 4px);
     grid-row: 2;
@@ -44,7 +45,7 @@ body {
   @media (min-width: 64rem) {
     grid-column: 2;
     grid-row: span 3;
-    height: calc(70vh + 7px);
+    height: calc(70vh + 16px);
   }
 
   img {

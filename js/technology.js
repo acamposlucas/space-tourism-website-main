@@ -2,20 +2,13 @@ import data from "../data.json";
 const selectors = document.querySelectorAll(".selector");
 const technologies = data.technology;
 
-console.log(window.innerHeight);
-
 selectors.forEach((selector, index) => {
   selector.addEventListener("click", () => {
-    // clearActiveClasses();
     clearAriaSelectedAttr();
     handleUpdateDestination(index);
     handleDestinationAttributes(index);
   });
 });
-
-// function clearActiveClasses() {
-//   selectors.forEach((selector) => selector.classList.remove("active"));
-// }
 
 function clearAriaSelectedAttr() {
   selectors.forEach((selector) => {
@@ -28,9 +21,7 @@ function handleUpdateDestination(index) {
   const description = document.getElementById("description");
   const img = document.querySelector(".img-wrapper");
 
-  console.log(img);
-
-  window.innerHeight <= 1440
+  window.innerWidth <= 1440
     ? (img.style.backgroundImage = `url('${technologies[index].images.landscape}')`)
     : (img.style.backgroundImage = `url('${technologies[index].images.portrait}')`);
 

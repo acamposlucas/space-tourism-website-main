@@ -40,6 +40,7 @@ body {
     @media (min-width: 64rem) {
       min-width: 445px;
       width: 100%;
+      max-width: 350px;
       grid-column: 1;
       grid-row: 1 / 3;
     }
