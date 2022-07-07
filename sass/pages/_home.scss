@@ -18,11 +18,6 @@ body {
   }
 }
 
-main {
-  padding-block: 2rem;
-  padding-inline: clamp(1.5rem, 7vw, 25rem);
-}
-
 .wrapper {
   display: grid;
   gap: clamp(5rem, 5vw, 10rem);
@@ -59,7 +54,7 @@ main {
     font-family: typography.$headings;
     text-transform: uppercase;
     letter-spacing: typography.$tracking-wide;
-    line-height: typography.$leading-loose;
+    line-height: typography.$leading-relaxed;
     font-size: 5rem;
 
     @media (min-width: 64rem) {

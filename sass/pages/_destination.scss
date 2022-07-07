@@ -18,169 +18,165 @@ body {
   }
 }
 
-main {
-  margin-block: 2rem;
-  padding-inline: clamp(1.5rem, 15vw, 25rem);
-}
-
-.wrapper {
+.content {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 2rem;
+  gap: clamp(1.25rem, 5rem, 3vw);
 
   @media (min-width: 64rem) {
-    grid-template-rows: repeat(2, auto);
-    gap: 4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 9.375rem;
   }
 
-  .content {
-    display: grid;
-    gap: clamp(1.25rem, 7rem, 5vw);
-    // padding-inline: clamp(1.5rem, 3rem, 7rem);
+  img {
+    aspect-ratio: 1;
+    display: block;
+    margin-inline: auto;
+    width: 170px;
+    grid-column: 1;
+
+    @media (min-width: 35rem) {
+      width: 300px;
+    }
+    @media (min-width: 64rem) {
+      min-width: 445px;
+      width: 100%;
+      grid-column: 1;
+      grid-row: 1 / 3;
+    }
+  }
+
+  ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    list-style: none;
+    max-width: fit-content;
+    margin-inline: auto;
 
     @media (min-width: 64rem) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 5rem;
+      grid-column: 2;
+      margin: 0;
     }
 
-    img {
-      aspect-ratio: 1;
-      display: block;
-      margin-inline: auto;
-      width: 170px;
-      grid-column: 1;
+    li {
+      color: colors.$white;
+      cursor: pointer;
 
-      @media (min-width: 35rem) {
-        width: 300px;
-      }
-      @media (min-width: 64rem) {
-        min-width: 445px;
-        grid-column: 1;
-        grid-row: 2 / 3;
-      }
-    }
+      padding-block: 0.5rem;
+      border-bottom: 3px solid transparent;
 
-    ul {
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-      gap: 1.5rem;
-      list-style: none;
-      max-width: fit-content;
-      margin-inline: auto;
-
-      @media (min-width: 64rem) {
-        grid-column: 2;
-        margin: 0;
-      }
-
-      li {
-        color: colors.$white;
+      button {
+        background-color: transparent;
+        border: 0;
+        color: inherit;
         cursor: pointer;
+        font-family: typography.$secondary-body;
+        text-transform: uppercase;
+        letter-spacing: typography.$tracking-widest;
+        font-size: 0.875rem;
 
-        padding-block: 0.5rem;
-        border-bottom: 3px solid transparent;
-
-        button {
-          background-color: transparent;
-          border: 0;
-          color: inherit;
-          cursor: pointer;
-          text-transform: uppercase;
-          letter-spacing: typography.$tracking-wider;
-          font-size: 0.875rem;
-        }
-
-        &:hover {
-          border-color: colors.$white-header-line;
-        }
-
-        @media (min-width: 64rem) {
+        @media (min-width: 35rem) {
           font-size: 1rem;
         }
+      }
 
-        &.active {
-          border-bottom: 3px solid colors.$white;
-        }
+      &:hover {
+        border-color: colors.$white-050;
+      }
+
+      @media (min-width: 64rem) {
+        font-size: 1rem;
+      }
+
+      &.active {
+        border-bottom: 3px solid colors.$white;
+      }
+    }
+  }
+
+  article {
+    text-align: center;
+
+    @media (min-width: 64rem) {
+      text-align: left;
+      grid-column: 2;
+    }
+
+    h1 {
+      color: colors.$white;
+      font-family: typography.$headings;
+      font-size: 3.5rem;
+      line-height: typography.$leading-relaxed;
+      text-transform: uppercase;
+
+      @media (min-width: 35rem) {
+        font-size: 5rem;
+      }
+
+      @media (min-width: 64rem) {
+        font-size: 6.25rem;
       }
     }
 
-    article {
-      text-align: center;
+    p {
+      color: colors.$purple;
+      font-family: typography.$body;
+      line-height: typography.$leading-relaxed;
 
       @media (min-width: 64rem) {
-        text-align: left;
-        grid-column: 2;
+        font-size: 1.125rem;
+      }
+    }
+
+    .content-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &:before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: colors.$white-050;
+        margin-top: clamp(2rem, 5vw, 7rem);
       }
 
-      h1 {
-        color: colors.$white;
-        font-family: typography.$title;
-        font-size: 3.5rem;
-        line-height: typography.$leading-relaxed;
-        text-transform: uppercase;
-
-        @media (min-width: 64rem) {
-          font-size: 6.25rem;
-        }
-      }
-
-      p {
-        color: colors.$purple;
-        line-height: typography.$leading-relaxed;
-
-        @media (min-width: 64rem) {
-          font-size: 1.125rem;
-        }
-      }
-
-      .content-details {
+      .details-wrapper {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        justify-content: center;
 
-        &:before {
-          content: "";
-          width: 100%;
-          height: 1px;
-          background-color: colors.$white-header-line;
-          margin-top: clamp(2rem, 5vw, 7rem);
+        @media (min-width: 35rem) {
+          flex-direction: row;
+          justify-content: space-evenly;
         }
 
-        .details-wrapper {
+        @media (min-width: 64rem) {
+          justify-content: flex-start;
+          gap: 5rem;
+        }
+
+        .detail {
           display: flex;
           flex-direction: column;
-          gap: clamp(2rem, 2rem, 10vw);
           justify-content: center;
+          gap: 0.75rem;
 
-          @media (min-width: 35rem) {
-            flex-direction: row;
+          strong {
+            font-family: typography.$secondary-body;
+            font-size: 0.875rem;
+            color: colors.$purple;
+            text-transform: uppercase;
+            letter-spacing: typography.$tracking-widest;
           }
 
-          @media (min-width: 64rem) {
-            justify-content: flex-start;
-          }
-
-          .detail {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 0.75rem;
-
-            strong {
-              font-family: typography.$secondary-paragraph;
-              font-size: 0.875rem;
-              color: colors.$purple;
-              text-transform: uppercase;
-              letter-spacing: typography.$tracking-widest;
-            }
-
-            span {
-              text-transform: uppercase;
-              color: colors.$white;
-              font-family: typography.$title;
-              font-size: 1.75rem;
-            }
+          span {
+            text-transform: uppercase;
+            color: colors.$white;
+            font-family: typography.$headings;
+            font-size: 1.75rem;
           }
         }
       }

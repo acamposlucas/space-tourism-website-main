@@ -13,22 +13,38 @@
   border-width: 0;
 }
 
+.container {
+  padding-inline: 1.5rem;
+  padding-block: 1.5rem;
+
+  @media (min-width: 35rem) {
+    padding-inline: 6.25rem;
+  }
+
+  @media (min-width: 64rem) {
+    padding-inline: 10rem;
+  }
+}
+
 .secondary-header {
   text-align: center;
-  width: max-content;
-  margin-inline: auto;
+  margin-bottom: 2rem;
 
   @media (min-width: 35rem) {
     text-align: left;
+    font-size: 1.25rem;
+    margin-bottom: 3.75rem;
   }
 
   @media (min-width: 64rem) {
     grid-column: span 2;
     font-size: 1.75rem;
+    margin-bottom: 4rem;
   }
 
   strong {
     color: colors.$white;
+    font-family: typography.$secondary-body;
     text-transform: uppercase;
     letter-spacing: typography.$tracking-widest;
 
