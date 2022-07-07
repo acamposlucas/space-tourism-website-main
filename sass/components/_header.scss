@@ -15,7 +15,7 @@
       height: 1px;
       width: 100%;
       margin-right: -2.5rem;
-      background: colors.$white-050;
+      background: colors.$white-025;
       order: 1;
       z-index: 1;
     }
@@ -89,7 +89,7 @@ nav {
   }
 
   @supports (backdrop-filter: blur(1rem)) {
-    background-color: colors.$white-050;
+    background-color: colors.$white-010;
     backdrop-filter: blur(1rem);
   }
 
@@ -119,11 +119,13 @@ nav {
       color: colors.$white;
       font-family: typography.$secondary-body;
       text-transform: uppercase;
-      letter-spacing: 2.36px;
-      line-height: 1.1;
+      letter-spacing: typography.$tracking-widest;
+      line-height: typography.$leading-normal;
       display: flex;
-      text-decoration: none;
-      padding-block: 2rem;
+
+      @media (min-width: 35rem) {
+        padding-block: 2rem;
+      }
 
       span {
         font-weight: 700;
